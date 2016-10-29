@@ -1,18 +1,17 @@
 # Name: Mohammed
 import glob
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from sklearn import svm
 import numpy as np
 from sklearn.model_selection import cross_val_score
 from mpl_toolkits.mplot3d import Axes3D
-%pylab
 
 def MAV(points):
     return sum(map(abs,points))/len(points)
 
 # loading the data
-path =r'/home/sahabi/Documents/emg' # use your path
+path =r'data' # use your path
 allFiles = glob.glob(path + "/new_data*.txt")
 frame = pd.DataFrame()
 list_ = []
@@ -32,10 +31,10 @@ ch6 = frame['chan6_middle']
 ch7 = frame['chan7_ring']
 ch8 = frame['chan8_pinky']
 label = frame['label']
-
 X = [ch4.tolist(), ch5.tolist(), ch6.tolist(), ch7.tolist(), ch8.tolist()]
 X = np.array(X)
-X = np.array(X).reshape((shape(X)[1],shape(X)[0]))
+shape = np.shape(X)
+X = np.array(X).reshape((shape[1],shape[0]))
 Y = label
 current_label = 9
 start_window = -1
