@@ -67,34 +67,34 @@ for data_point in data_points:
 # TS plot
 axes1 = plt.subplot(321)
 axes1.set_ylim([-600,600])
-axes1.plot(ch4[0:60000])
+axes1.plot(ch4[0:100000])
 axes1.set_title('Ch4: Thumb')
 
 axes2 = plt.subplot(322)
-axes2.plot(ch5[0:60000])
+axes2.plot(ch5[0:100000])
 axes2.set_ylim([-400,400])
 axes2.set_title('Ch5: Index')
 
 axes3 = plt.subplot(323)
-axes3.plot(ch6[0:60000])
+axes3.plot(ch6[0:100000])
 axes3.set_ylim([-400,400])
 axes3.set_title('Ch6: Middle')
 
 axes4 = plt.subplot(324)
-axes4.plot(ch7[0:60000])
+axes4.plot(ch7[0:100000])
 axes4.set_ylim([-400,400])
 axes4.set_title('Ch7: Ring')
 
 axes5 = plt.subplot(325)
-axes5.plot(ch8[0:60000])
+axes5.plot(ch8[0:100000])
 axes5.set_ylim([-400,400])
 axes5.set_title('Ch8: Pinky')
 
 axes6 = plt.subplot(326)
-axes6.plot(label[0:60000]*80)
+axes6.plot(label[0:100000]*80)
 axes6.set_ylim([-400,400])
 axes6.set_title('Label')
-
+print len(ch4)
 
 plt.show()
 
